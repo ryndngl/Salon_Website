@@ -1,0 +1,82 @@
+@import "tailwindcss";
+/* Add these to your main CSS file (e.g., src/index.css or src/App.css) */
+
+/* Keyframes for the moving background blobs */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* Keyframes for the subtle pulsing underline animation */
+@keyframes pulse-light {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1); /* Maintain center alignment */
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) scaleX(1.1); /* Slightly wider and faded */
+  }
+}
+
+/* Keyframes for fade-in-up animation (for main content and button) */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for subtle bounce animation (for emojis/icons) */
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Moves up slightly */
+  }
+}
+
+/* Custom utility classes for animation delays (used in JSX) */
+.animation-delay-200 {
+  animation-delay: 0.2s; /* For subtle bounce delay */
+}
+.animation-delay-600 {
+  animation-delay: 0.6s; /* For button fade-in delay */
+}
+.animation-delay-2000 {
+  animation-delay: 2s; /* For blob 2 */
+}
+.animation-delay-4000 {
+  animation-delay: 4s; /* For blob 3 */
+}
+
+/* Apply animations */
+.animate-blob {
+  animation: blob 7s infinite cubic-bezier(0.6, 0.4, 0.4, 0.8); /* Smooth, infinite blob movement */
+}
+.animate-pulse-light {
+  animation: pulse-light 2s infinite ease-in-out; /* Smooth, infinite pulse */
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards; /* Fade in and move up */
+}
+.animate-bounce-subtle {
+  animation: bounce-subtle 1.5s infinite ease-in-out; /* Subtle up-and-down bounce */
+}
