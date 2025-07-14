@@ -1,4 +1,3 @@
-import React from "react";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
 function Contact() {

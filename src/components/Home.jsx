@@ -1,9 +1,8 @@
-import React from 'react';
-import backgroundImage from '../assets/BG.webp';
+import backgroundImage from "../assets/BG2.webp"; 
 
 function Home() {
   const sectionStyle = {
-    backgroundImage: `url(${backgroundImage})`, // Gamitin ang imported image dito
+    backgroundImage: `url(${backgroundImage})`, 
   };
 
   return (
@@ -12,28 +11,50 @@ function Home() {
       style={sectionStyle} // Apply the inline style here for background-image
       className="
         relative
-        py-65             // Your existing padding, adjust if needed
-        bg-cover          // Tailwind for background-size: cover;
-        bg-center         // Tailwind for background-position: center;
-        bg-no-repeat      // Tailwind for background-repeat: no-repeat;
-        min-h-screen      // Ensures the section takes full viewport height
-        flex              // Enables flexbox for centering content
-        items-center      // Centers content vertically
-        justify-center    // Centers content horizontally
-        text-white">
+        py-16 sm:py-24 md:py-32 lg:py-48 
+        bg-top md:bg-center 
+        bg-no-repeat
+        min-h-screen
+        flex 
+        items-center 
+        justify-center 
+        text-white
+      "
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black opacity-40"></div>
 
-      <div className="container mx-auto text-center z-10 p-4"> {/* Added p-4 for some internal padding */}
-        <h2 className="text-5xl font-bold mb-4">Welcome to Van's Glow Up Salon</h2>
-        <p className="text-lg mb-8">
-         Your destination for beauty, relaxation, and a renewed you. <br />
+      <div className="container mx-auto text-center z-10 p-4 sm:p-6 md:p-8">
+        {" "}
+        {/* Responsive internal padding */}
+        <h2
+          className="
+          text-3xl sm:text-4xl md:text-5xl lg:text-6xl // Responsive font size for heading
+          font-bold mb-4 sm:mb-6 md:mb-8 // Responsive margin-bottom
+        "
+        >
+          Welcome to Van's Glow Up Salon
+        </h2>
+        <p
+          className="
+          text-base sm:text-lg md:text-xl // Responsive font size for paragraph
+          mb-8 sm:mb-10 md:mb-12 // Responsive margin-bottom
+        "
+        >
+          Your destination for beauty, relaxation, and a renewed you. <br />
           Book your appointments conveniently through our mobile app!
         </p>
-        <button className="bg-green-500 text-white font-semibold py-3 px-6 rounded-full transition duration-300">
-         Download Our Mobile App 
+        <button
+          className="
+          bg-green-500 text-white font-semibold
+          py-2 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8 // Responsive padding for button
+          rounded-full transition duration-300
+          text-sm sm:text-base md:text-lg // Responsive font size for button text
+        "
+        >
+          Download Our Mobile App
         </button>
       </div>
-      {/*Optional: Add an overlay for better text readability if the image is too busy/bright */}
-      {<div className="absolute inset-0 bg-black opacity-40"></div> }
     </section>
   );
 }

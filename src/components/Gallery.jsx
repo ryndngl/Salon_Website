@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import galleryImage1 from "../assets/G1.webp";
 import galleryImage2 from "../assets/G2.webp";
@@ -56,11 +56,10 @@ import galleryImage53 from "../assets/G53.webp";
 import galleryImage54 from "../assets/G54.webp";
 
 
-
 function Gallery() {
   const allGalleryItems = [
     { src: galleryImage1, category: "Nails" },
-    { src: galleryImage2, category: "Eye Lashes",},
+    { src: galleryImage2, category: "Eye Lashes" },
     { src: galleryImage3, category: "Nails" },
     { src: galleryImage4, category: "Hair Styling" },
     { src: galleryImage5, category: "Hair Color" },
@@ -113,28 +112,20 @@ function Gallery() {
     { src: galleryImage52, category: "Foot Spa" },
     { src: galleryImage53, category: "Foot Spa" },
     { src: galleryImage54, category: "Foot Spa" }
-    
-    
-    
-    
-    
-    
   ];
 
   const categories = [
-    "All",
-    "Hair Styling",
+    "Hair Styling", // Tinanggal ang "All"
     "Hair Color",
     "Nails",
     "Eye Lashes",
     "Foot Spa",
   ];
-  const [filter, setFilter] = useState("All");
+  // Binago ang initial filter state sa unang category
+  const [filter, setFilter] = useState(categories[0]); // Default na ngayon ay "Hair Styling"
 
-  const filteredGalleryItems =
-    filter === "All"
-      ? allGalleryItems
-      : allGalleryItems.filter((item) => item.category === filter);
+  // Ang filteredGalleryItems logic ay magiging mas simple
+  const filteredGalleryItems = allGalleryItems.filter((item) => item.category === filter);
 
   // State to manage the lightbox
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -149,24 +140,16 @@ function Gallery() {
     setLightboxOpen(false);
     setSelectedImage(null);
   };
-// bg-pink-600 rounded-full animate-pulse-light
+
   return (
     <section
       id="gallery"
       className="py-20 md:py-32 bg-gradient-to-br from-purple-50 to-pink-50"
     >
-      {" "}
-      {/* Changed gradient background for a fresh look */}
       <div className="container mx-auto px-4 text-center max-w-7xl">
-        {" "}
-        {/* Increased max-width */}
-        {/* Heading and Underline for Gallery */}
         <h2 className="text-4xl sm:text-5xl font-extrabold text-purple-800 mb-12 relative pb-4">
-          {" "}
-          {/* Changed text color */}
           <span className="relative z-10">Our Gallery</span>
-          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-28 h-2 bg-purple-500 rounded-full animate-pulse-light"></span>{" "}
-          {/* Changed underline color */}
+          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-28 h-2 bg-purple-500 rounded-full animate-pulse-light"></span>
         </h2>
         {/* Category Filters */}
         <div className="mb-12 flex flex-wrap justify-center gap-3">
@@ -174,8 +157,9 @@ function Gallery() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`  py-2 px-6 rounded-full text-lg font-medium transition-all duration-300 ease-in-out
-              ${filter === cat? "bg-purple-600 text-white shadow-lg hover:bg-purple-700": "bg-white text-gray-700 border border-gray-300 hover:bg-gray-100" }`}>
+              className={`py-2 px-6 rounded-full text-lg font-medium transition-all duration-300 ease-in-out
+              ${filter === cat ? "bg-purple-600 text-white shadow-lg hover:bg-purple-700" : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-100"}`}
+            >
               {cat}
             </button>
           ))}
@@ -191,8 +175,6 @@ function Gallery() {
               >
                 {/* Image with aspect ratio container */}
                 <div className="w-full h-0 pb-[75%] relative bg-gray-200">
-                  {" "}
-                  {/* 4:3 aspect ratio */}
                   <img
                     src={item.src}
                     alt={item.alt}

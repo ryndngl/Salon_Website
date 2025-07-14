@@ -80,3 +80,8 @@
 .animate-bounce-subtle {
   animation: bounce-subtle 1.5s infinite ease-in-out; /* Subtle up-and-down bounce */
 }
+
+/* Bagong custom class para sa background-size: 100% auto; */
+.bg-size-full-width {
+  background-size: 100% auto;
+}
