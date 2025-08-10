@@ -1,8 +1,9 @@
-import backgroundImage from "../assets/BG2.webp"; 
+// src/components/Home.jsx
+import backgroundImage from "../assets/BG2.webp";
 
 function Home() {
   const sectionStyle = {
-    backgroundImage: `url(${backgroundImage})`, 
+    backgroundImage: `url(${backgroundImage})`, // Gamitin ang imported image dito
   };
 
   return (
@@ -12,17 +13,18 @@ function Home() {
       className="
         relative
         py-16 sm:py-24 md:py-32 lg:py-48 
+        bg-cover
         bg-top md:bg-center 
         bg-no-repeat
-        min-h-screen
+        min-h-screen 
         flex 
         items-center 
-        justify-center 
+        justify-center
         text-white
-      "
+     "
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      <div className="absolute inset-0 bg-black opacity-30 backdrop-blur-sm"></div>
 
       <div className="container mx-auto text-center z-10 p-4 sm:p-6 md:p-8">
         {" "}
