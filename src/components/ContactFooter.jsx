@@ -1,6 +1,80 @@
+import { useState } from "react";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
 function ContactFooter() {
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
+
+  const termsContent = (
+    <>
+      <h2 className="text-2xl font-semibold mb-4 text-red-900">Terms and Conditions</h2>
+      <p className="mb-4 font-medium text-gray-700">Last Updated: January 2025</p>
+
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        By using Van's Glow Up Salon app and services, you agree to these terms.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">Booking and Payments</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        Bookings must be confirmed. Cancellations require 24-hour notice. We accept GCash, cards, and cash. Prices may change without notice.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">Service Policies</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        Inform us of allergies or conditions. Results may vary. Minors need guardian consent.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">User Accounts & Privacy</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        Keep your account secure and provide accurate info. We protect your data per our Privacy Policy.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">Liability & Intellectual Property</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        We are not liable for indirect damages. All app content is owned by Van's Glow Up Salon.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">Changes & Governing Law</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        Terms may change anytime. Use constitutes acceptance. Governed by Philippines law.
+      </p>
+
+      <p className="mt-8 text-gray-700 font-semibold">
+        Contact us for questions: vansglowupsalon@gmail.com | +63 956 411 7744
+      </p>
+    </>
+  );
+
+  const privacyContent = (
+    <>
+      <h2 className="text-2xl font-semibold mb-4 text-red-900">Privacy Policy</h2>
+      <p className="mb-4 font-medium text-gray-700">Last Updated: January 2025</p>
+
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        We collect personal info (name, contact, payment) and usage data to improve your experience. We protect your data securely.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">Use & Sharing</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        Data is used to manage bookings, payments, and communications. We do not sell your info. Shared only with trusted providers or legal requirements.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">Your Rights</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        You may access, correct, or delete your data. Opt out of marketing anytime.
+      </p>
+
+      <h3 className="font-semibold mt-6 mb-2 text-red-900">Security & Retention</h3>
+      <p className="mb-4 text-gray-800 leading-relaxed">
+        We use industry-standard security and keep data only as long as needed or legally required.
+      </p>
+
+      <p className="mt-8 text-gray-700 font-semibold">
+        Contact us: vansglowupsalon@gmail.com | +63 956 411 7744
+      </p>
+    </>
+  );
+
   return (
     <div id="contact" className="bg-gray-200">
       <footer className="text-white">
@@ -31,17 +105,17 @@ function ContactFooter() {
                     +63 (938) 991 7000
                   </a>
                 </li>
-                <li className="flex items-center gap-2">
-                  <MdLocationOn className="text-xl text-red-900" />
-                  <span>Visit Us</span>
+                <li className="flex items-start gap-2">
+                  <MdLocationOn className="text-xl text-red-900 mt-1" />
+                  <div>
+                    <span className="font-semibold text-red-900">Visit Us</span>
+                    <p className="text-sm leading-tight text-gray-800 mt-1">
+                      Blk 7 Lot 2 Phase 1 Sub Urban Village<br />
+                      Brgy. San Jose Rodriguez Rizal, Philippines
+                    </p>
+                  </div>
                 </li>
               </ul>
-
-              {/* Address */}
-              <div className="text-sm leading-relaxed text-gray-800">
-                <p>Blk 7 Lot 2 Phase 1 Sub Urban Village</p>
-                <p>Brgy. San Jose Rodriguez Rizal, Philippines</p>
-              </div>
             </div>
 
             {/* Right Column - Clickable Map Preview */}
@@ -65,13 +139,19 @@ function ContactFooter() {
 
           {/* Terms & Privacy */}
           <div className="text-center mt-16 text-sm text-gray-800">
-            <a href="#" className="hover:underline mx-1">
+            <button
+              onClick={() => setShowTerms(true)}
+              className="hover:underline mx-1 text-red-900 font-semibold"
+            >
               Terms of Condition
-            </a>
+            </button>
             <span className="mx-1">•</span>
-            <a href="#" className="hover:underline mx-1">
+            <button
+              onClick={() => setShowPrivacy(true)}
+              className="hover:underline mx-1 text-red-900 font-semibold"
+            >
               Privacy Policy
-            </a>
+            </button>
           </div>
         </div>
 
@@ -81,6 +161,52 @@ function ContactFooter() {
             © {new Date().getFullYear()} Van's Glow Up Salon. All rights reserved.
           </div>
         </div>
+
+        {/* Terms Modal */}
+        {showTerms && (
+          <div
+            onClick={() => setShowTerms(false)}
+            style={{ backgroundColor: "rgba(0,0,0,0.2)" }}
+            className="fixed inset-0 backdrop-blur-sm flex justify-center items-center p-6 z-50 cursor-pointer"
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white max-w-3xl w-full max-h-[80vh] overflow-y-auto rounded-lg p-8 text-gray-900 cursor-default shadow-lg relative"
+            >
+              <button
+                onClick={() => setShowTerms(false)}
+                aria-label="Close Terms and Conditions"
+                className="absolute top-4 right-4 text-red-900 text-2xl font-bold hover:text-red-700 transition"
+              >
+                &#x2715;
+              </button>
+              {termsContent}
+            </div>
+          </div>
+        )}
+
+        {/* Privacy Modal */}
+        {showPrivacy && (
+          <div
+            onClick={() => setShowPrivacy(false)}
+            style={{ backgroundColor: "rgba(0,0,0,0.2)" }}
+            className="fixed inset-0 backdrop-blur-sm flex justify-center items-center p-6 z-50 cursor-pointer"
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white max-w-3xl w-full max-h-[80vh] overflow-y-auto rounded-lg p-8 text-gray-900 cursor-default shadow-lg relative"
+            >
+              <button
+                onClick={() => setShowPrivacy(false)}
+                aria-label="Close Privacy Policy"
+                className="absolute top-4 right-4 text-red-900 text-2xl font-bold hover:text-red-700 transition"
+              >
+                &#x2715;
+              </button>
+              {privacyContent}
+            </div>
+          </div>
+        )}
       </footer>
     </div>
   );

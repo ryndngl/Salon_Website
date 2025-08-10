@@ -55,7 +55,6 @@ import galleryImage52 from "../assets/G52.webp";
 import galleryImage53 from "../assets/G53.webp";
 import galleryImage54 from "../assets/G54.webp";
 
-
 function Gallery() {
   const allGalleryItems = [
     { src: galleryImage1, category: "Nails" },
@@ -196,30 +195,39 @@ function Gallery() {
             </p>
           )}
         </div>
-        {/* --- Lightbox Modal (Retained) --- */}
+
+        {/* --- Lightbox Modal (matches Terms modal layout) --- */}
         {lightboxOpen && selectedImage && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
             onClick={closeLightbox}
+            style={{ backgroundColor: "rgba(0,0,0,0.2)" }} // subtle transparent dark overlay, same as Terms
+            className="fixed inset-0 backdrop-blur-sm flex justify-center items-center p-6 z-50 cursor-pointer"
           >
             <div
-              className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-xl shadow-2xl"
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the image itself
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-lg max-w-3xl w-full max-h-[80vh] overflow-hidden shadow-lg relative cursor-default"
             >
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                className="max-w-full max-h-[85vh] object-contain cursor-zoom-out"
-              />
+              {/* Close button inside the white card (upper-right) */}
               <button
                 onClick={closeLightbox}
-                className="absolute top-4 right-4 text-white text-4xl font-bold bg-black bg-opacity-60 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-80 transition z-50"
                 aria-label="Close image"
+                className="absolute top-4 right-4 text-red-900 text-3xl font-bold hover:text-red-700 transition z-50"
               >
-                &times;
+                &#x2715;
               </button>
+
+              {/* Image (contained, full but not oversized) */}
+              <div className="flex justify-center items-center p-4">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="w-full h-auto max-h-[75vh] object-contain"
+                />
+              </div>
+
+              {/* Optional caption (kept consistent with your theme) */}
               {selectedImage.alt && (
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center text-lg">
+                <div className="bg-red-900 text-white text-center p-3 text-lg font-semibold select-none">
                   {selectedImage.alt}
                 </div>
               )}
