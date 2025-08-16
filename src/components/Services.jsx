@@ -1,16 +1,16 @@
 
 // --- Local Image Imports ---
-import haircutImage from '../assets/haircut.webp';
-import haircolorImage from '../assets/haircolor.webp';
-import nailcareImage from '../assets/nailcare.webp';
-import hairtreatmentImage from '../assets/hairtreatment.webp';
-import footImage from '../assets/foot.webp';
-import rebondImage from '../assets/rebond.webp';
+import haircutImage from '/assets/servicesImages/haircut.webp';
+import haircolorImage from '/assets/servicesImages/haircolor.webp';
+import nailcareImage from '/assets/servicesImages/nailcare.webp';
+import hairtreatmentImage from '/assets/servicesImages/hairtreatment.webp';
+import footImage from '/assets/servicesImages/foot.webp';
+import rebondImage from '/assets/servicesImages/rebond.webp';
 
 function Services() {
   const services = [
     {
-      title: "Hair Styling",
+      title: "Hair Cut",
       description: "Expert haircuts, and styling for every occasion.",
       image: haircutImage,
     },
