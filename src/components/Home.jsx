@@ -3,13 +3,13 @@ import backgroundImage from "/assets/BG2.webp";
 
 function Home() {
   const sectionStyle = {
-    backgroundImage: `url(${backgroundImage})`, // Gamitin ang imported image dito
+    backgroundImage: `url(${backgroundImage})`,
   };
 
   return (
     <section
       id="home"
-      style={sectionStyle} // Apply the inline style here for background-image
+      style={sectionStyle}
       className="
         relative
         py-16 sm:py-24 md:py-32 lg:py-48 
@@ -54,7 +54,7 @@ function Home() {
           text-sm sm:text-base md:text-lg // Responsive font size for button text
         "
         >
-          Download Our Mobile App
+           Get the App Now
         </button>
       </div>
     </section>
