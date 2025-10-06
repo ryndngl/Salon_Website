@@ -27,35 +27,36 @@ function Home() {
       <div className="absolute inset-0 bg-black opacity-30 backdrop-blur-sm"></div>
 
       <div className="container mx-auto text-center z-10 p-4 sm:p-6 md:p-8">
-        {" "}
-        {/* Responsive internal padding */}
         <h2
           className="
-          text-3xl sm:text-4xl md:text-5xl lg:text-6xl // Responsive font size for heading
-          font-bold mb-4 sm:mb-6 md:mb-8 // Responsive margin-bottom
+          text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+          font-bold mb-4 sm:mb-6 md:mb-8
         "
         >
           Welcome to Van's Glow Up Salon
         </h2>
         <p
           className="
-          text-base sm:text-lg md:text-xl // Responsive font size for paragraph
-          mb-8 sm:mb-10 md:mb-12 // Responsive margin-bottom
+          text-base sm:text-lg md:text-xl
+          mb-8 sm:mb-10 md:mb-12
         "
         >
           Your destination for beauty, relaxation, and a renewed you. <br />
           Book your appointments conveniently through our mobile app!
         </p>
-        <button
-          className="
-          bg-green-500 text-white font-semibold
-          py-2 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8 // Responsive padding for button
-          rounded-full transition duration-300
-          text-sm sm:text-base md:text-lg // Responsive font size for button text
-        "
-        >
-           Get the App Now
-        </button>
+        <a href="#mobile-app">
+          <button
+            className="
+            bg-green-500 text-white font-semibold
+            py-2 px-4 sm:py-3 sm:px-6 md:py-4 md:px-8
+            rounded-full transition duration-300
+            text-sm sm:text-base md:text-lg
+            hover:bg-green-600
+          "
+          >
+            Get the App Now
+          </button>
+        </a>
       </div>
     </section>
   );
