@@ -1,5 +1,5 @@
 // src/components/Home.jsx
-import backgroundImage from "/assets/BG2.webp";
+import backgroundImage from "/assets/BackgroundImage/BG2.webp";
 
 function Home() {
   const sectionStyle = {
