@@ -1,13 +1,29 @@
 import { useState } from 'react';
+import LogoIcon from '/assets/vans-glow-up-salon.svg'; 
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false); // State para sa mobile menu
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="py-4 shadow-md bg-white relative z-50"> {/* Nagdagdag ng bg-white at z-50 para mas makita at nasa ibabaw */}
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-6"> {/* Nagdagdag ng responsive padding */}
-        {/* Salon Title - Responsive Font Size */}
-        <h1 className="text-2xl sm:text-3xl font-bold text-red-900">Van's Glow Up Salon</h1>
+    <nav className="py-4 shadow-md bg-white relative z-50"> 
+      <div className="w-full flex justify-between items-center px-4 md:px-12"> 
+        
+        {/* START: SALON BRAND (Logo + Title) */}
+        <div className="flex items-center space-x-2"> 
+            
+            {/* LOGO ICON */}
+            <img 
+                src={LogoIcon} 
+                alt="Van's Glow up Salon Logo" 
+                className="w-8 h-8 sm:w-10 sm:h-10" 
+            />
+            
+            <h1 className="text-xl sm:text-2xl font-bold text-red-900 inline-block">
+                Van's Glow Up Salon
+            </h1>
+        </div>
+        {/* END: SALON BRAND */}
+
 
         {/* Hamburger Menu Button - Visible lang sa mobile */}
         <button
