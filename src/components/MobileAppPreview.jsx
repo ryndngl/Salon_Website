@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Download, Smartphone } from 'lucide-react';
 
-// Import your images
-import splashScreen from '../assets/mobile-app/splash-screen.png';
-import homeContent from '../assets/mobile-app/home-content.png';
-import hairCut from '../assets/mobile-app/hair-cut.png';
-import hairColor from '../assets/mobile-app/hair-color.png';
-import myBookings from '../assets/mobile-app/my-bookings.png';
-import profileScreen from '../assets/mobile-app/profile-screen.png';
-
 export default function MobileAppPreview() {
   const [currentScreen, setCurrentScreen] = useState(0);
   
@@ -16,32 +8,32 @@ export default function MobileAppPreview() {
     {
       title: "Welcome to Van's Glow up Salon",
       description: "Beautiful splash screen that greets users when they open the app",
-      image: splashScreen
+      image: "/assets/mobile-app/splash-screen.png"
     },
     {
       title: "Browse All Services",
       description: "Easy access to all salon services - Hair, Nails, Spa, and more",
-      image: homeContent
+      image: "/assets/mobile-app/home-content.png"
     },
     {
       title: "Hair Cut Options",
       description: "Browse haircut styles for Men, Women, and Kids with prices",
-      image: hairCut
+      image: "/assets/mobile-app/hair-cut.png"
     },
     {
       title: "Hair Color Styles",
       description: "Explore vibrant colors and transformations for your look",
-      image: hairColor
+      image: "/assets/mobile-app/hair-color.png"
     },
     {
       title: "My Bookings",
       description: "Track and manage your appointments in one place",
-      image: myBookings
+      image: "/assets/mobile-app/my-bookings.png"
     },
     {
       title: "Profile & Settings",
       description: "View your favorites, past bookings, and payment methods",
-      image: profileScreen
+      image: "/assets/mobile-app/profile-screen.png"
     }
   ];
 
@@ -54,7 +46,7 @@ export default function MobileAppPreview() {
   };
 
   return (
-    <div id="mobile-app" className="min-h-screen bg-gradient-to-br  from-gray-900 via-gray-800 to-black py-20 px-4">
+    <div id="mobile-app" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black py-20 px-4">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -81,21 +73,21 @@ export default function MobileAppPreview() {
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-red-600/20 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-600/20 rounded-full blur-3xl"></div>
 
-            {/* Phone Frame - Android Style - Better proportions */}
-             <div className="relative w-[340px] h-[720px] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl shadow-red-900/50">
-             <div className="w-full h-full bg-gray-100 rounded-[2rem] overflow-hidden relative">
+              {/* Phone Frame - Android Style - Better proportions */}
+              <div className="relative w-[340px] h-[720px] bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl shadow-red-900/50">
+                <div className="w-full h-full bg-gray-100 rounded-[2rem] overflow-hidden relative">
 
-            {/* Android top bar (subtle) */}
-             <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-black/10 to-transparent z-10"></div>
+                  {/* Android top bar (subtle) */}
+                  <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-black/10 to-transparent z-10"></div>
     
-             {/* Actual Screenshot */}
-            <img 
-             src={screens[currentScreen].image} 
-             alt={screens[currentScreen].title}
-             className="w-full h-full object-cover transition-all duration-500"
-             />
-            </div>
-            </div>
+                  {/* Actual Screenshot */}
+                  <img 
+                    src={screens[currentScreen].image} 
+                    alt={screens[currentScreen].title}
+                    className="w-full h-full object-cover transition-all duration-500"
+                  />
+                </div>
+              </div>
 
               {/* Navigation Buttons - Plain/Transparent */}
               <button 
@@ -171,7 +163,7 @@ export default function MobileAppPreview() {
 
             {/* Download Button - APK Only */}
             <div className="pt-8">
-              <button className="w-full bg-green-600 text-white py-4 px-6 rounded-xl font-semibold transition flex items-center justify-center gap-3 group">
+              <button className="w-full bg-green-600 text-white py-4 px-6 rounded-xl font-semibold transition flex items-center justify-center gap-3 group hover:bg-green-700">
                 <Download className="w-6 h-6 group-hover:translate-y-1 transition" />
                 Download APK
               </button>
