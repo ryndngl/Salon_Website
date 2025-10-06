@@ -1,68 +1,84 @@
 import { useState } from "react";
 
 function Gallery() {
-  const allGalleryItems = [
-    { src: "/assets/galleryImages/G1.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G2.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G3.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G4.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G5.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G6.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G7.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G8.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G9.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G10.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G11.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G12.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G13.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G14.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G15.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G16.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G17.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G18.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G19.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G20.webp", category: "Hair Cut" },
-    { src: "/assets/galleryImages/G21.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G22.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G23.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G24.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G25.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G26.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G27.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G28.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G29.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G30.webp", category: "Hair Color" },
-    { src: "/assets/galleryImages/G31.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G32.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G33.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G34.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G35.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G36.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G37.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G38.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G39.webp", category: "Nails" },
-    { src: "/assets/galleryImages/G40.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G41.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G42.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G43.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G44.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G45.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G46.webp", category: "Eye Lashes" },
-    { src: "/assets/galleryImages/G47.webp", category: "Foot Spa" },
-    { src: "/assets/galleryImages/G48.webp", category: "Foot Spa" },
-    { src: "/assets/galleryImages/G49.webp", category: "Foot Spa" },
-    { src: "/assets/galleryImages/G50.webp", category: "Foot Spa" },
-    { src: "/assets/galleryImages/G51.webp", category: "Foot Spa" },
-    { src: "/assets/galleryImages/G52.webp", category: "Foot Spa" },
-    { src: "/assets/galleryImages/G53.webp", category: "Foot Spa" },
-    { src: "/assets/galleryImages/G54.webp", category: "Foot Spa" }
+ const allGalleryItems = [
+    // Hair Cut - Kids
+    { src: "/assets/HairCut/kids1.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/kids2.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/kids3.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/kids4.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/kids5.webp", category: "Hair Cut" },
+    
+    // Hair Cut - Men
+    { src: "/assets/HairCut/men1.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/men2.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/men3.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/men4.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/men5.webp", category: "Hair Cut" },
+    
+    // Hair Cut - Women
+    { src: "/assets/HairCut/women1.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/women2.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/women3.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/women4.webp", category: "Hair Cut" },
+    { src: "/assets/HairCut/women5.webp", category: "Hair Cut" },
+    
+    // Hair Color
+    { src: "/assets/HairColor/hair-color1.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color2.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color3.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color4.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color5.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color6.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color7.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color8.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color9.webp", category: "Hair Color" },
+    { src: "/assets/HairColor/hair-color10.webp", category: "Hair Color" },
+    
+    // Nail Care
+    { src: "/assets/NailCare/nails1.webp", category: "Nail Care" },
+    { src: "/assets/NailCare/nails2.webp", category: "Nail Care" },
+    { src: "/assets/NailCare/nails3.webp", category: "Nail Care" },
+    { src: "/assets/NailCare/nails4.webp", category: "Nail Care" },
+    { src: "/assets/NailCare/nails5.webp", category: "Nail Care" },
+    { src: "/assets/NailCare/nails6.webp", category: "Nail Care" },
+    { src: "/assets/NailCare/nails7.webp", category: "Nail Care" },
+    { src: "/assets/NailCare/nails8.webp", category: "Nail Care" },
+    
+    // Rebond & Forms
+    { src: "/assets/Rebond/rebond1.webp", category: "Rebond & Forms" },
+    { src: "/assets/Rebond/rebond2.webp", category: "Rebond & Forms" },
+    { src: "/assets/Rebond/rebond3.webp", category: "Rebond & Forms" },
+    { src: "/assets/Rebond/rebond4.webp", category: "Rebond & Forms" },
+    { src: "/assets/Rebond/rebond5.webp", category: "Rebond & Forms" },
+    
+    // Hair Treatment
+    { src: "/assets/HairTreatment/hair-treatment1.webp", category: "Hair Treatment" },
+    { src: "/assets/HairTreatment/hair-treatment2.webp", category: "Hair Treatment" },
+    { src: "/assets/HairTreatment/hair-treatment3.webp", category: "Hair Treatment" },
+    { src: "/assets/HairTreatment/hair-treatment4.webp", category: "Hair Treatment" },
+    { src: "/assets/HairTreatment/hair-treatment5.webp", category: "Hair Treatment" },
+    { src: "/assets/HairTreatment/hair-treatment6.webp", category: "Hair Treatment" },
+    { src: "/assets/HairTreatment/hair-treatment7.webp", category: "Hair Treatment" },
+    { src: "/assets/HairTreatment/hair-treatment8.webp", category: "Hair Treatment" },
+    
+    // Foot Spa
+    { src: "/assets/FootSpa/foot-spa1.webp", category: "Foot Spa" },
+    { src: "/assets/FootSpa/foot-spa2.webp", category: "Foot Spa" },
+    { src: "/assets/FootSpa/foot-spa3.webp", category: "Foot Spa" },
+    { src: "/assets/FootSpa/foot-spa4.webp", category: "Foot Spa" },
+    { src: "/assets/FootSpa/foot-spa5.webp", category: "Foot Spa" },
+    { src: "/assets/FootSpa/foot-spa6.webp", category: "Foot Spa" },
+    { src: "/assets/FootSpa/foot-spa7.webp", category: "Foot Spa" },
+    { src: "/assets/FootSpa/foot-spa8.webp", category: "Foot Spa" }
   ];
 
   const categories = [
     "Hair Cut", 
     "Hair Color",
-    "Nails",
-    "Eye Lashes",
+    "Nail Care",
+    "Rebond & Forms",
+    "Hair Treatment",
     "Foot Spa",
   ];
   const [filter, setFilter] = useState(categories[0]);
