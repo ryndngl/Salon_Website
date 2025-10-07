@@ -88,7 +88,7 @@ function ContactFooter() {
                 <li className="flex items-center gap-2 sm:gap-3">
                   <MdPhone className="text-lg sm:text-xl text-red-900 flex-shrink-0" />
                   <a href="tel:+639389917000" className="hover:underline text-sm sm:text-base">
-                    +63 (938) 991 7000
+                    +63 956 411 7744
                   </a>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3">
