@@ -37,7 +37,7 @@ function Services() {
       <div className="container mx-auto px-4 text-center max-w-6xl">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-red-800 mb-8 sm:mb-10 md:mb-12 relative">
           <span className="relative z-10">Our Services</span>
-          <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 w-20 sm:w-28 md:w-36 h-2 bg-red-600 rounded-full animate-pulse-light"></span>
+          <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 w-20 sm:w-28 md:w-36 h-2 bg-red-600 rounded-full"></span>
         </h2>
 
         <div className="flex justify-center">
@@ -45,18 +45,15 @@ function Services() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-xl p-6 md:p-8 transform transition duration-500 hover:shadow-2xl hover:-translate-y-3 flex flex-col items-center border border-gray-100 cursor-pointer overflow-hidden"
+                className="bg-white rounded-2xl p-6 md:p-8 transition duration-300 hover:opacity-80 flex flex-col items-center border border-gray-200 cursor-pointer overflow-hidden"
               >
-                <div className="w-full h-48 sm:h-56 md:h-64 mb-4 md:mb-6 overflow-hidden rounded-xl shadow-inner relative group">
+                <div className="w-full h-48 sm:h-56 md:h-64 mb-4 md:mb-6 overflow-hidden rounded-xl relative">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover object-center transform transition duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-base sm:text-lg font-bold text-white">{service.title}</p>
-                  </div>
                 </div>
 
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-red-800 mb-2 md:mb-3">{service.title}</h3>
