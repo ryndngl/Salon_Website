@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import LogoIcon from '/assets/vans-glow-up-salon.svg'; 
+import LogoIcon from '/assets/vans-glow-up-salon.svg';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="py-4 shadow-md bg-white relative z-50"> 
+    <nav className="sticky top-0 py-4 shadow-lg bg-gradient-to-r from-gray-900 to-gray-800 z-50"> 
       <div className="w-full flex justify-between items-center px-4 md:px-12"> 
         
         {/* START: SALON BRAND (Logo + Title) */}
@@ -18,7 +18,7 @@ function Navbar() {
                 className="w-8 h-8 sm:w-10 sm:h-10" 
             />
             
-            <h1 className="text-xl sm:text-2xl font-bold text-red-900 inline-block">
+            <h1 className="text-xl sm:text-2xl font-bold text-white inline-block">
                 Van's Glow Up Salon
             </h1>
         </div>
@@ -27,7 +27,7 @@ function Navbar() {
 
         {/* Hamburger Menu Button - Visible lang sa mobile */}
         <button
-          className="md:hidden text-gray-700 hover:text-red-900 focus:outline-none"
+          className="md:hidden text-gray-300 hover:text-white focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           {/* SVG para sa hamburger icon */}
@@ -58,7 +58,7 @@ function Navbar() {
             w-full md:w-auto // Full width sa mobile
             items-center // Center items horizontally sa mobile
             md:items-end // Align items sa dulo sa desktop
-            bg-white md:bg-transparent // Background sa mobile menu
+            bg-gray-800 md:bg-transparent // Background sa mobile menu
             p-4 md:p-0 // Padding sa mobile menu
             rounded-lg md:rounded-none // Rounded corners sa mobile menu
             shadow-lg md:shadow-none // Shadow sa mobile menu
@@ -67,11 +67,11 @@ function Navbar() {
             z-20 // Para nasa ibabaw ng ibang content
           `}
         >
-          <li><a href="#home" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-red-900 transition duration-300 text-lg md:text-base">Home</a></li>
-          <li><a href="#services" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-red-900 transition duration-300 text-lg md:text-base">Services</a></li>
-          <li><a href="#gallery" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-red-900 transition duration-300 text-lg md:text-base">Gallery</a></li>
-          <li><a href="#about" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-red-900 transition duration-300 text-lg md:text-base">About</a></li>
-          <li><a href="#contact" onClick={() => setIsOpen(false)} className="block py-2 text-gray-700 hover:text-red-900 transition duration-300 text-lg md:text-base">Contact</a></li>
+          <li><a href="#home" onClick={() => setIsOpen(false)} className="block py-2 text-gray-300 hover:text-white transition duration-300 text-lg md:text-base">Home</a></li>
+          <li><a href="#services" onClick={() => setIsOpen(false)} className="block py-2 text-gray-300 hover:text-white transition duration-300 text-lg md:text-base">Services</a></li>
+          <li><a href="#gallery" onClick={() => setIsOpen(false)} className="block py-2 text-gray-300 hover:text-white transition duration-300 text-lg md:text-base">Gallery</a></li>
+          <li><a href="#about" onClick={() => setIsOpen(false)} className="block py-2 text-gray-300 hover:text-white transition duration-300 text-lg md:text-base">About</a></li>
+          <li><a href="#contact" onClick={() => setIsOpen(false)} className="block py-2 text-gray-300 hover:text-white transition duration-300 text-lg md:text-base">Contact</a></li>
         </ul>
       </div>
     </nav>
