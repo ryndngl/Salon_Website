@@ -58,8 +58,8 @@ export default function MobileAppPreview() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
             Mobile App Features
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4">
-            Book your favorite salon services anytime, anywhere with our easy-to-use mobile app
+         <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4">
+            Book your favorite salon services anytime, anywhere with our easy&#8209;to&#8209;use mobile app
           </p>
         </div>
 
