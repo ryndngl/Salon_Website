@@ -100,9 +100,9 @@ function Gallery() {
   return (
     <section id="gallery" className="py-12 sm:py-16 md:py-20 lg:py-32 bg-gradient-to-br from-purple-50 to-pink-50">
       <div className="container mx-auto px-4 text-center max-w-7xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-red-900 mb-8 sm:mb-10 md:mb-12 relative pb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-800 mb-8 sm:mb-10 md:mb-12 relative pb-4">
           <span className="relative z-10">Our Gallery</span>
-          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 sm:w-24 md:w-28 h-2 bg-red-600 rounded-full"></span>
+          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 sm:w-24 md:w-28 h-2 bg-purple-500 rounded-full animate-pulse-light"></span>
         </h2>
         
         {/* Category Filters */}
@@ -112,7 +112,7 @@ function Gallery() {
               key={cat}
               onClick={() => setFilter(cat)}
               className={`py-2 px-4 sm:px-5 md:px-6 rounded-full text-sm sm:text-base md:text-lg font-medium transition-all duration-300 ease-in-out
-                ${filter === cat ? "bg-red-600 text-white shadow-md hover:bg-red-700" : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-100"}`}
+                ${filter === cat ? "bg-purple-600 text-white shadow-lg hover:bg-purple-700" : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-100"}`}
             >
               {cat}
             </button>
@@ -120,21 +120,27 @@ function Gallery() {
         </div>
         
         {/* Image Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 bg-white p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 bg-white p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-100">
           {filteredGalleryItems.length > 0 ? (
             filteredGalleryItems.map((item, index) => (
               <div
                 key={index}
-                className="relative rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 group cursor-pointer transition-opacity duration-300 hover:opacity-80"
+                className="relative rounded-lg sm:rounded-xl overflow-hidden shadow-md group cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
                 onClick={() => openLightbox(item)}
               >
-                <div className="w-full h-0 pb-[75%] relative bg-gray-100">
+                <div className="w-full h-0 pb-[75%] relative bg-gray-200">
                   <img
                     src={item.src}
-                    alt={item.category}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    alt={item.alt || item.category}
+                    className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 group-hover:opacity-80"
                     loading="lazy"
                   />
+                </div>
+              
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2 sm:p-3 md:p-4">
+                  <p className="text-white text-sm sm:text-base md:text-lg font-semibold transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    {item.alt || item.category}
+                  </p>
                 </div>
               </div>
             ))
@@ -145,31 +151,37 @@ function Gallery() {
           )}
         </div>
 
-        {/* Lightbox Modal */}
+        {/* Lightbox Modal - Mobile Optimized */}
         {lightboxOpen && selectedImage && (
           <div
             onClick={closeLightbox}
-            className="fixed inset-0 bg-black/90 flex justify-center items-center z-50 cursor-pointer p-2 sm:p-4"
+            className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 cursor-pointer p-2 sm:p-4"
           >
+            <button
+              onClick={closeLightbox}
+              aria-label="Close image"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white text-2xl sm:text-3xl font-bold hover:text-gray-300 transition z-50 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full hover:bg-white/10"
+            >
+              ✕
+            </button>
+            
             <div
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-transparent max-w-3xl w-full max-h-[90vh] overflow-hidden cursor-default"
+              className="bg-transparent max-w-3xl w-full max-h-[90vh] sm:max-h-[85vh] md:max-h-[80vh] overflow-hidden relative cursor-default"
             >
-              <button
-                onClick={closeLightbox}
-                aria-label="Close image"
-                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 text-white text-3xl sm:text-4xl font-bold hover:text-gray-300 transition z-50 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full bg-gray-900/80 hover:bg-gray-800"
-              >
-                ✕
-              </button>
-              
               <div className="flex justify-center items-center p-2 sm:p-4">
                 <img
                   src={selectedImage.src}
-                  alt={selectedImage.category}
-                  className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+                  alt={selectedImage.alt || selectedImage.category}
+                  className="w-full h-auto max-h-[80vh] sm:max-h-[75vh] object-contain rounded-lg"
                 />
               </div>
+
+              {selectedImage.alt && (
+                <div className="bg-red-900 text-white text-center p-2 sm:p-3 text-sm sm:text-base md:text-lg font-semibold select-none">
+                  {selectedImage.alt}
+                </div>
+              )}
             </div>
           </div>
         )}
