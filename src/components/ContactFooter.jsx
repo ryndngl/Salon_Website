@@ -106,7 +106,7 @@ function ContactFooter() {
 
             {/* Store Hours */}
             <div className="px-0 md:px-4 md:border-r border-gray-400 h-full">
-              <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-red-900">Store Hours</h3>
+              <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-red-900">Business Hours</h3>
               <ul className="space-y-2 sm:space-y-3 text-gray-800 text-sm sm:text-base">
                 <li>
                   <span className="font-semibold text-red-900">Monday - Friday:</span>
