@@ -63,23 +63,23 @@ function About() {
             
             <div className="bg-white p-5 sm:p-6 rounded-xl border-t-4 border-red-400 border border-gray-200 transition">
               <p className="italic text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
-                I have been coming here for over a year. The stylists really know their craft and the prices are very reasonable. Plus booking through their app is so convenient!
+               "Napakaganda ng service! Napakabait ng staff, at ramdam mo talaga 'yung effort nila sa bawat gupit. Ang ganda pa ng salon! Book agad ako ulit."
               </p>
-              <p className="font-semibold text-red-700 text-sm sm:text-base">- Maria S., Regular Client</p>
+              <p className="font-semibold text-red-700 text-sm sm:text-base">- Cathy P., First-Time Customer</p>
             </div>
             
             <div className="bg-white p-5 sm:p-6 rounded-xl border-t-4 border-red-400 border border-gray-200 transition">
               <p className="italic text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
-                Got my hair colored here and it turned out exactly how I wanted. The staff is friendly and the salon is always clean and professional.
+               "Ang linis at ganda ng Van's, nakakarelax! Sobrang galing magkulay ng stylist, hindi tinipid sa product. Highly recommended!"
               </p>
-              <p className="font-semibold text-red-700 text-sm sm:text-base">- Jean T., First-time Client</p>
+              <p className="font-semibold text-red-700 text-sm sm:text-base">- Mela D., First-Time Visit</p>
             </div>
             
             <div className="bg-white p-5 sm:p-6 rounded-xl border-t-4 border-red-400 border border-gray-200 transition sm:col-span-2 lg:col-span-1">
               <p className="italic text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
-                Best salon in Cainta! I always book my appointments through their app. Very professional service at affordable prices. Highly recommended!
+                "Sana noon pa sila nag-open! Ang bilis mag-book sa app, at affordable pa ang services.
               </p>
-              <p className="font-semibold text-red-700 text-sm sm:text-base">- Andrea L., Loyal Customer</p>
+              <p className="font-semibold text-red-700 text-sm sm:text-base">- Liza A., New Regular</p>
             </div>
             
           </div>
