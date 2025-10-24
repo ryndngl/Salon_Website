@@ -31,8 +31,8 @@ function Home() {
           Welcome to Van's Glow Up Salon
         </h2>
         <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-          Your destination for beauty, relaxation, and a renewed you. <br className="hidden sm:block" />
-          Book your appointments conveniently through our mobile app!
+         Your local home for a fabulous glow-up! Come on in and feel the care. <br className="hidden sm:block" />
+         Booking your appointments is quick and easy through our mobile app.
         </p>
         <a href="#mobile-app">
           <button className="bg-green-500 text-white font-semibold py-3 px-6 sm:py-3 sm:px-8 md:py-4 md:px-10 rounded-full transition duration-300 text-sm sm:text-base md:text-lg hover:bg-green-600 hover:scale-105 active:scale-95 shadow-lg">
