@@ -14,7 +14,7 @@ function ContactFooter() {
       </p>
       <h3 className="font-semibold mt-4 sm:mt-6 mb-2 text-red-900 text-base sm:text-lg">Booking and Payments</h3>
       <p className="mb-3 sm:mb-4 text-gray-800 leading-relaxed text-sm sm:text-base">
-        Bookings must be confirmed. Cancellations require 24-hour notice. We accept GCash, cards, and cash. Prices may change without notice.
+        Bookings must be confirmed. Cancellations require 24-hour notice. We accept GCash, Cash on service. 
       </p>
       <h3 className="font-semibold mt-4 sm:mt-6 mb-2 text-red-900 text-base sm:text-lg">Service Policies</h3>
       <p className="mb-3 sm:mb-4 text-gray-800 leading-relaxed text-sm sm:text-base">
