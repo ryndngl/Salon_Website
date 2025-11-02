@@ -131,9 +131,7 @@ function ContactFooter() {
             <div className="pl-0 md:pl-4 h-full">
               <div className="w-full rounded-lg overflow-hidden shadow-lg">
                 <a
-                  href="https://www.google.com/maps/place/DHALIA+SALON/@14.7527606,121.140007,3a,75y,358.61h,93.72t/data=!3m8!1e1!3m6!1s1XYYx1P5CGRuNC5P8n-s_w!2e0!5s20240201T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.719836212531348%26panoid%3D1XYYx1P5CGRuNC5P8n-s_w%26yaw%3D358.6066431000693!7i16384!8i8192!4m6!3m5!1s0x3397a4ccd3336411:0xdf88bba0b4df985e!8m2!3d14.7528255!4d121.1400074!16s%2Fg%2F11w33sfjnz?hl=en&entry=ttu"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="https://www.google.com/maps/place/DHALIA+SALON/@14.7527606,121.140007,3a,75y,358.61h,93.72t/data=!3m8!1e1!3m6!1s1XYYx1P5CGRuNC5P8n-s_w!2e0!5s20240201T000000!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-3.719836212531348%26panoid%3D1XYYx1P5CGRuNC5P8n-s_w%26yaw%3D358.6066431000693!7i16384!8i8192!4m6!3m5!1s0x3397a4ccd3336411:0xdf88bba0b4df985e!8m2!3d14.7528255!4d121.1400074!16s%2Fg%2F11w33sfjnz?hl=en&entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D"
                 >
                   <img
                     src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?cb_client=maps_sv.tactile&w=900&h=600&pitch=-3.719836212531348&panoid=1XYYx1P5CGRuNC5P8n-s_w&yaw=358.6066431000693"
