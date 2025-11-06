@@ -186,7 +186,7 @@ export default function MobileAppPreview() {
             {/* Download Button */}
             <div className="pt-4 sm:pt-6 md:pt-8">
               <a
-                href="https://github.com/ryndngl/BooknGlow-mobile/releases/download/v1.0.0/booknglow.apk"
+                href="https://github.com/ryndngl/BooknGlow-mobile/releases/download/v1.0.0/BooknGlow.apk"
                 download
                 className="w-full bg-green-600 text-white py-3 sm:py-4 px-6 rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold transition flex items-center justify-center gap-2 sm:gap-3 group hover:bg-green-700 active:scale-95"
               >
